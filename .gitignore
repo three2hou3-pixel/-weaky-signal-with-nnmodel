@@ -1,0 +1,21 @@
+# 忽略模型权重
+*.pth
+*.pt
+*.bin
+*.h5
+*.ckpt
+*.pkl
+*.npy
+
+# 忽略数据集、大文件
+data/
+dataset/
+weights/
+checkpoints/
+models/
+
+# 忽略日志、缓存
+logs/
+runs/
+__pycache__/
+*.pyc
