@@ -1,0 +1,42 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ---- 虚拟环境 ----
+venv/
+.venv/
+env/
+ENV/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- IDE / 编辑器 ----
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ---- 日志与临时文件 ----
+*.log
+
+# ---- TensorBoard 输出 ----
+tensorboard_logs/
+runs/
+events.out.tfevents.*
+
+# ---- 第三方开源项目（非本人代码，仅作数据生成依赖，见 README 致谢）----
+# 需要时请自行克隆: https://github.com/pepijn-lens/SeaClutterSuppression
+SeaClutterSuppression-main/
+
+# ---- 生成的仿真数据集（体积大，由 generate_dataset.py 重新生成）----
+*.h5
+radar_data/

@@ -25,7 +25,10 @@ MAX_ITERS = 500
 PATIENCE = 50        
 LR = 1e-4
 THRESH = 0.5         
-GRADIENT_CLIP = 1.0  
+GRADIENT_CLIP = 1.0
+
+# 训练结束后是否自动关机（AutoDL 等云服务器省钱用）。默认关闭，需要时改为 True。
+AUTO_SHUTDOWN = False
 
 # ====================== 2. 数据加载器 (共享内存，彻底消灭 I/O 死锁) ======================
 class RadarH5Dataset(Dataset):
@@ -230,8 +233,11 @@ def main():
             f.write(f"Test Recall: {test_r:.4f}\n")
             f.write(f"Test F1-Score: {test_f1:.4f}\n")
             
-        print("⏳ 训练完成，10秒后自动关机...")
-        os.system("sleep 10 && shutdown") 
+        if AUTO_SHUTDOWN:
+            print("⏳ 训练完成，10秒后自动关机...")
+            os.system("sleep 10 && shutdown")
+        else:
+            print("✅ 训练全部完成。")
 
 if __name__ == '__main__':
     main()
