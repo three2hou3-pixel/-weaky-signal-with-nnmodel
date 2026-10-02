@@ -27,16 +27,30 @@ Thumbs.db
 
 # ---- 日志与临时文件 ----
 *.log
-
-# ---- TensorBoard 输出 ----
-tensorboard_logs/
+logs/
 runs/
+tensorboard_logs/
 events.out.tfevents.*
+
+# ---- 模型权重 ----
+# 说明：saved_models/best_RTFEN_model.pth 在早期提交中已被跟踪，
+# .gitignore 对已跟踪文件不生效，因此该权重仍随仓库分发。
+*.pth
+*.pt
+*.bin
+*.ckpt
+*.pkl
+*.npy
+
+# ---- 数据集与大文件（由 generate_dataset.py 重新生成）----
+*.h5
+data/
+dataset/
+radar_data/
+weights/
+checkpoints/
+models/
 
 # ---- 第三方开源项目（非本人代码，仅作数据生成依赖，见 README 致谢）----
 # 需要时请自行克隆: https://github.com/pepijn-lens/SeaClutterSuppression
 SeaClutterSuppression-main/
-
-# ---- 生成的仿真数据集（体积大，由 generate_dataset.py 重新生成）----
-*.h5
-radar_data/
